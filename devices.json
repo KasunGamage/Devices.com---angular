@@ -4,7 +4,7 @@
     "status": "available",
     "icon": {
       "id": 1,
-      "url": ""
+      "url": "assets/images/cell-phone.svg"
     },
     "type": 1,
     "temperature": "10 Celsius",
@@ -17,7 +17,7 @@
     "status": "offline",
     "icon": {
       "id": 2,
-      "url": ""
+      "url": "assets/images/device-tab.svg"
     },
     "type": 1,
     "temperature": "15 Celsius",
@@ -30,7 +30,7 @@
     "status": "available",
     "icon": {
       "id": 3,
-      "url": ""
+      "url": "assets/images/pc-monitor.svg"
     },
     "type": 1,
     "temperature": "30 Celsius",

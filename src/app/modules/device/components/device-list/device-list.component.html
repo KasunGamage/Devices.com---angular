@@ -1,1 +1,30 @@
-<p>device-list works!</p>
+<div class="container-fluid">
+  <div
+    class="row deviceItem m-1 align-items-center"
+    *ngFor="let item of deviceList"
+  >
+    <div class="col-2 text-center">
+      <img
+        height="30"
+        id="infoIcon"
+        [src]="item?.icon?.url"
+        attr.alt="device icon"
+        alt="device icon"
+      />
+    </div>
+    <div class="col m-auto">
+      <div class="row">
+        <div class="col-12">{{ item?.name }}</div>
+        <div class="col-12">Status: {{ item?.status }}</div>
+      </div>
+    </div>
+    <div class="col-3 text-center">
+      <img
+        id="infoIcon"
+        [src]="filePathConstant.infoIcon"
+        attr.alt="Info icon"
+        alt="Info icon"
+      />
+    </div>
+  </div>
+</div>
