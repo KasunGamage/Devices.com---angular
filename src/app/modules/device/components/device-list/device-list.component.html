@@ -1,7 +1,7 @@
 <div class="container-fluid p-0">
   <!-- search bar -->
   <app-search-bar (searchEvent)="onSearchChange($event)"></app-search-bar>
-  <!-- search bar -->
+  <!-- device-list -->
   <div class="device-list">
     <div
       class="row device-item my-1 mx-2 py-1 align-items-center"
@@ -18,10 +18,12 @@
           alt="device icon"
         />
       </div>
-      <div class="col m-auto">
+      <div class="col">
         <div class="row">
-          <div class="col-12">{{ item?.name ? item.name : '-' }}</div>
-          <div class="col-12 status">Status: {{ item?.status ? item.status : '-' }}</div>
+          <div class="col-12">{{ item?.name ? item.name : "-" }}</div>
+          <div class="col-12 status">
+            Status: {{ item?.status ? item.status : "-" }}
+          </div>
         </div>
       </div>
       <div class="col-3 text-center">
@@ -37,7 +39,7 @@
     <!-- no data -->
     <div
       *ngIf="isDataEmpty()"
-      class="no-data d-flex justify-content-center align-items-center h-100"
+      class="d-flex justify-content-center align-items-center h-100"
     >
       <span> No data found!</span>
     </div>

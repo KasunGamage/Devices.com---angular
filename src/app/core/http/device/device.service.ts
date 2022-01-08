@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Device } from 'src/app/shared/models/device';
+import { Device } from '../../../shared/models/device';
 import { HttpService } from '../http.service';
 
 @Injectable({

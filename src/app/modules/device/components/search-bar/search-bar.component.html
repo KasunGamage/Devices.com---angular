@@ -4,9 +4,9 @@
       <!-- search -->
       <div class="input-group p-2">
         <div class="input-group-prepend">
-          <span class="gray-btn input-group-text bg-white">
+          <span class="input-group-text bg-white">
             <img
-              class="searchIcon"
+              id="searchIcon"
               [src]="filePathConstant.searchIcon"
               attr.alt="search icon"
               alt="search icon"
@@ -15,14 +15,16 @@
         </div>
         <input
           tabindex="1"
+          id="searchInput"
           type="text"
           [formControl]="searchInputControl"
-          class="p-18 gray-btn btn-f-14-2 text-left form-control header-responsive"
+          class="text-left form-control"
           placeholder="Search"
           attr.aria-label="Search"
         />
         <span
           *ngIf="isCancelBtnShown"
+          id="cancelBtn"
           class="px-3 cancel d-flex align-items-center"
           role="button"
           (click)="cancelSearch()"

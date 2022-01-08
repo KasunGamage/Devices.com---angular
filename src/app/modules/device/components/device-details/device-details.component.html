@@ -8,6 +8,7 @@
       <div class="row device-item my-1 mr-1 ml-0 py-1">
         <div class="col-12"><strong>Related Devices</strong></div>
       </div>
+      <!-- list -->
       <div
         class="row device-item my-1 mr-1 ml-0 py-1 align-items-center"
         *ngFor="let item of relatedDeviceList"
@@ -21,7 +22,7 @@
             alt="device icon"
           />
         </div>
-        <div class="col m-auto">
+        <div class="col">
           <div class="row">
             <div class="col-12">{{ item?.name ? item.name : "-" }}</div>
             <div class="col-12 status">
@@ -33,7 +34,7 @@
       <!-- no data -->
       <div
         *ngIf="!relatedDeviceList?.length"
-        class="no-data d-flex justify-content-center align-items-center h-100"
+        class="d-flex justify-content-center align-items-center h-100"
       >
         <span> No data found!</span>
       </div>

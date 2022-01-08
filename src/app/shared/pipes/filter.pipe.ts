@@ -12,7 +12,8 @@ export class SearchFilterPipe implements PipeTransform {
     }
     return items.filter(
       (item: Device) =>
-        item?.name?.includes(filter) || item?.status?.includes(filter)
+        item?.name?.toLocaleLowerCase()?.includes(filter.toLocaleLowerCase()) ||
+        item?.status?.toLocaleLowerCase()?.includes(filter.toLocaleLowerCase())
     );
   }
 }

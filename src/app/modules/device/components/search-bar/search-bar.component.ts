@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
-import { FilePaths } from 'src/app/shared/constants/filePaths';
+import { FilePaths } from '../../../../shared/constants/filePaths';
 
 @Component({
   selector: 'app-search-bar',

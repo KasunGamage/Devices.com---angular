@@ -5,9 +5,6 @@ import { SearchFilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [SearchFilterPipe],
   exports: [SearchFilterPipe],
-  imports: [
-    CommonModule,
-    // NgBootstrapModule,
-  ],
+  imports: [CommonModule],
 })
 export class SharedModule {}
