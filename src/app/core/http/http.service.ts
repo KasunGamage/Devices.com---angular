@@ -16,8 +16,8 @@ export class HttpService {
    * @param path API Endpoint
    * @returns http response
    */
-  get(path: string): Observable<any> {
-    return this.http.get(`${Constants.API_LINK}${path}`, {
+  get(): Observable<any> {
+    return this.http.get(`${Constants.API_LINK}`, {
       headers: this.getHeaders(),
     });
   }

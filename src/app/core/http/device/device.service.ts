@@ -10,10 +10,6 @@ export class DeviceService {
   constructor(private readonly httpService: HttpService) {}
 
   getDevices(): Observable<ApiResponse> {
-    return this.httpService.get('organization/reports/find');
-  }
-
-  getDeviceById(id: number): Observable<ApiResponse> {
-    return this.httpService.get(`organization/reports/${id}`);
+    return this.httpService.get();
   }
 }
