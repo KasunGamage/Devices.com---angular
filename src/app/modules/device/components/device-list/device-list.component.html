@@ -1,30 +1,45 @@
-<div class="container-fluid">
-  <div
-    class="row deviceItem m-1 align-items-center"
-    *ngFor="let item of deviceList"
-  >
-    <div class="col-2 text-center">
-      <img
-        height="30"
-        id="infoIcon"
-        [src]="item?.icon?.url"
-        attr.alt="device icon"
-        alt="device icon"
-      />
-    </div>
-    <div class="col m-auto">
-      <div class="row">
-        <div class="col-12">{{ item?.name }}</div>
-        <div class="col-12">Status: {{ item?.status }}</div>
+<div class="container-fluid p-0">
+  <!-- search bar -->
+  <app-search-bar (searchEvent)="onSearchChange($event)"></app-search-bar>
+  <!-- search bar -->
+  <div class="device-list">
+    <div
+      class="row device-item my-1 mx-2 py-1 align-items-center"
+      *ngFor="let item of deviceList | searchFilter: searchString"
+      role="button"
+      (click)="goToDetails(item)"
+    >
+      <div class="col-2 text-center">
+        <img
+          height="30"
+          [id]="'deviceIcon_' + item?.id"
+          [src]="item?.icon?.url"
+          attr.alt="device icon"
+          alt="device icon"
+        />
+      </div>
+      <div class="col m-auto">
+        <div class="row">
+          <div class="col-12">{{ item?.name ? item.name : '-' }}</div>
+          <div class="col-12 status">Status: {{ item?.status ? item.status : '-' }}</div>
+        </div>
+      </div>
+      <div class="col-3 text-center">
+        <img
+          height="20"
+          [id]="'infoIcon_' + item?.id"
+          [src]="filePathConstant.infoIcon"
+          attr.alt="Info icon"
+          alt="Info icon"
+        />
       </div>
     </div>
-    <div class="col-3 text-center">
-      <img
-        id="infoIcon"
-        [src]="filePathConstant.infoIcon"
-        attr.alt="Info icon"
-        alt="Info icon"
-      />
+    <!-- no data -->
+    <div
+      *ngIf="isDataEmpty()"
+      class="no-data d-flex justify-content-center align-items-center h-100"
+    >
+      <span> No data found!</span>
     </div>
   </div>
 </div>

@@ -1,1 +1,36 @@
-<p>search-bar works!</p>
+<div class="container-fluid p-0 mb-2">
+  <div class="row search-bar my-1 mx-2 align-items-center">
+    <div class="col-12 p-0">
+      <!-- search -->
+      <div class="input-group p-2">
+        <div class="input-group-prepend">
+          <span class="gray-btn input-group-text bg-white">
+            <img
+              class="searchIcon"
+              [src]="filePathConstant.searchIcon"
+              attr.alt="search icon"
+              alt="search icon"
+            />
+          </span>
+        </div>
+        <input
+          tabindex="1"
+          type="text"
+          [formControl]="searchInputControl"
+          class="p-18 gray-btn btn-f-14-2 text-left form-control header-responsive"
+          placeholder="Search"
+          attr.aria-label="Search"
+        />
+        <span
+          *ngIf="isCancelBtnShown"
+          class="px-3 cancel d-flex align-items-center"
+          role="button"
+          (click)="cancelSearch()"
+          tabindex="2"
+        >
+          Cancel
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

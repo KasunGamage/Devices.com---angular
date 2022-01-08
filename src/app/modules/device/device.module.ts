@@ -6,18 +6,22 @@ import { DeviceListComponent } from './components/device-list/device-list.compon
 import { DeviceDetailsComponent } from './components/device-details/device-details.component';
 import { DevicesComponent } from './pages/devices/devices.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
     DeviceListComponent,
     DeviceDetailsComponent,
     DevicesComponent,
-    SearchBarComponent
+    SearchBarComponent,
   ],
   imports: [
     CommonModule,
-    DeviceRoutingModule
-  ]
+    DeviceRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
+  ],
 })
-export class DeviceModule { }
+export class DeviceModule {}

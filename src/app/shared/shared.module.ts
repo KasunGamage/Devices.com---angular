@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SearchFilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  declarations: [
-    // HeaderComponent,
-  ],
-  exports: [
-    // HeaderComponent
-  ],
+  declarations: [SearchFilterPipe],
+  exports: [SearchFilterPipe],
   imports: [
     CommonModule,
     // NgBootstrapModule,

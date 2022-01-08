@@ -19,7 +19,7 @@ const routes: Routes = [
     component: DeviceListComponent,
   },
   {
-    path: ':id',
+    path: 'list/:id',
     component: DeviceDetailsComponent,
   },
 ];

@@ -1,7 +1,7 @@
 [{
     "id": 1,
     "name": "Device 1",
-    "status": "available",
+    "status": "Available",
     "icon": {
       "id": 1,
       "url": "assets/images/cell-phone.svg"
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Device 2",
-    "status": "offline",
+    "status": "Offline",
     "icon": {
       "id": 2,
       "url": "assets/images/device-tab.svg"
@@ -27,7 +27,7 @@
   {
     "id": 3,
     "name": "Device 3",
-    "status": "available",
+    "status": "Available",
     "icon": {
       "id": 3,
       "url": "assets/images/pc-monitor.svg"
@@ -36,5 +36,83 @@
     "temperature": "30 Celsius",
     "usage": 1,
     "related": [1, 2]
+  },
+  {
+    "id": 4,
+    "name": "Device 4",
+    "status": "Offline",
+    "icon": {
+      "id": 2,
+      "url": "assets/images/device-tab.svg"
+    },
+    "type": 2,
+    "temperature": "25 Celsius",
+    "usage": 1,
+    "related": [2, 3, 7, 8]
+  },
+  {
+    "id": 5,
+    "name": "Device 5",
+    "status": "Offline",
+    "icon": {
+      "id": 2,
+      "url": "assets/images/device-tab.svg"
+    },
+    "type": 1,
+    "temperature": "15 Celsius",
+    "usage": 1,
+    "related": [1, 3, 5]
+  },
+  {
+    "id": 6,
+    "name": "Device 6",
+    "status": "Offline",
+    "icon": {
+      "id": 3,
+      "url": "assets/images/pc-monitor.svg"
+    },
+    "type": 1,
+    "temperature": "40 Celsius",
+    "usage": 1,
+    "related": [2]
+  },
+  {
+    "id": 7,
+    "name": "Device 7",
+    "status": "Available",
+    "icon": {
+      "id": 1,
+      "url": "assets/images/cell-phone.svg"
+    },
+    "type": 1,
+    "temperature": "10 Celsius",
+    "usage": 1,
+    "related": [2, 3, 7, 8, 9]
+  },
+  {
+    "id": 8,
+    "name": "Device 8",
+    "status": "Offline",
+    "icon": {
+      "id": 1,
+      "url": "assets/images/cell-phone.svg"
+    },
+    "type": 1,
+    "temperature": "45 Celsius",
+    "usage": 1,
+    "related": []
+  },
+  {
+    "id": 9,
+    "name": "Device 9",
+    "status": "Offline",
+    "icon": {
+      "id": 1,
+      "url": "assets/images/cell-phone.svg"
+    },
+    "type": 1,
+    "temperature": "12 Celsius",
+    "usage": 1,
+    "related": [4, 7]
   }
 ]
