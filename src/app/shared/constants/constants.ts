@@ -1,3 +1,6 @@
 export class Constants {
-  static API_LINK = 'http://10.205.16.12/api/v1/';
+  static API_LINK =
+    'https://raw.githubusercontent.com/KasunGamage/Devices.com---angular/dev/devices.json';
+  // static API_LINK =
+  // 'https://raw.githubusercontent.com/KasunGamage/Devices.com---angular/main/devices.json';
 }

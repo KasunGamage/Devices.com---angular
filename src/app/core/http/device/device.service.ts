@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../../../shared/models/api-response';
+import { Device } from '../../../shared/models/device';
 import { HttpService } from '../http.service';
 
 @Injectable({
@@ -9,11 +9,7 @@ import { HttpService } from '../http.service';
 export class DeviceService {
   constructor(private readonly httpService: HttpService) {}
 
-  getDevices(): Observable<ApiResponse> {
-    return this.httpService.get('organization/reports/find');
-  }
-
-  getDeviceById(id: number): Observable<ApiResponse> {
-    return this.httpService.get(`organization/reports/${id}`);
+  getDevices(): Observable<Device[]> {
+    return this.httpService.get();
   }
 }

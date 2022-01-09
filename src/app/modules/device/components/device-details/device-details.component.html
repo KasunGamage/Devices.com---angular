@@ -1,1 +1,81 @@
-<p>device-details works!</p>
+<div class="container-fluid p-0">
+  <!-- search bar -->
+  <app-search-bar></app-search-bar>
+  <!-- device details - left + right -->
+  <div class="device-details row my-1 mx-2 py-1">
+    <!-- related devices -->
+    <div class="col-6 pl-0">
+      <div class="row device-item my-1 mr-1 ml-0 py-1">
+        <div class="col-12"><strong>Related Devices</strong></div>
+      </div>
+      <!-- list -->
+      <div
+        class="row device-item my-1 mr-1 ml-0 py-1 align-items-center"
+        *ngFor="let item of relatedDeviceList"
+      >
+        <div class="col-2 ml-2">
+          <img
+            height="30"
+            [id]="'deviceIcon_' + item?.id"
+            [src]="item?.icon?.url"
+            attr.alt="device icon"
+            alt="device icon"
+          />
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col-12">{{ item?.name ? item.name : "-" }}</div>
+            <div class="col-12 status">
+              Status: {{ item?.status ? item.status : "-" }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- no data -->
+      <div
+        *ngIf="!relatedDeviceList?.length"
+        class="d-flex justify-content-center align-items-center h-100"
+      >
+        <span> No data found!</span>
+      </div>
+    </div>
+    <!-- device details -->
+    <div class="col-6 px-0">
+      <div class="row my-1 mx-0 align-items-center details-right">
+        <div class="col-12 device-item py-2">
+          <strong>
+            Details: {{ deviceDetails?.name ? deviceDetails?.name : "-" }}
+          </strong>
+        </div>
+        <div class="col-12">
+          <p class="m-0">
+            Status: {{ deviceDetails?.status ? deviceDetails?.status : "-" }}
+          </p>
+          <p class="m-0">
+            Temperature:
+            {{ deviceDetails?.temperature ? deviceDetails?.temperature : "-" }}
+          </p>
+          <p class="m-0">Usage:</p>
+        </div>
+        <!-- chart img -->
+        <div class="col-12">
+          <img
+            *ngIf="deviceDetails"
+            [id]="'barChart'"
+            [src]="filePathConstant.barChartImg"
+            attr.alt="bar chart"
+            alt="bar chart"
+            width="100%"
+          />
+          <!-- no data -->
+          <div
+            *ngIf="!deviceDetails"
+            class="no-data py-5 d-flex justify-content-center align-items-center h-100"
+          >
+            <span> No data found!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

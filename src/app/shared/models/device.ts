@@ -1,14 +1,15 @@
 export interface Device {
   id: number;
-  longitude: number;
-  latitude: number;
+  name: string;
   status: string;
-  description: string;
-  street: string;
-  area: string;
-  entryDate: string;
-  finishedDate?: any;
-  targetDate: string;
-  complete?: any;
-  reporter?: any;
+  icon: Icon;
+  type: number;
+  temperature: string;
+  usage: number;
+  related: number[];
+}
+
+export interface Icon {
+  id: number;
+  url: string;
 }

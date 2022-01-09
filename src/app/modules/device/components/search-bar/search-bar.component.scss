@@ -1,0 +1,15 @@
+.search-bar {
+  background-color: #e9eaf6;
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .cancel {
+    color: #7285f4;
+  }
+}
