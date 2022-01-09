@@ -3,9 +3,9 @@ export interface Device {
   name: string;
   status: string;
   icon: Icon;
-  type: string;
+  type: number;
   temperature: string;
-  usage: string;
+  usage: number;
   related: number[];
 }
 
