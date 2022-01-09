@@ -11,13 +11,13 @@ import {
 
 import { DeviceListComponent } from './device-list.component';
 import { SearchFilterPipe } from '../../../../shared/pipes/filter.pipe';
+import { By } from '@angular/platform-browser';
 
 describe('DeviceListComponent', () => {
   let component: DeviceListComponent;
   let fixture: ComponentFixture<DeviceListComponent>;
   let service: DeviceService;
   let httpMock: HttpTestingController;
-  let injector: TestBed;
   const dummyDeviceList: Device[] = [
     {
       id: 1,
@@ -147,16 +147,11 @@ describe('DeviceListComponent', () => {
   });
 
   beforeEach(() => {
-    injector = getTestBed();
-    fixture = injector.createComponent(DeviceListComponent);
+    fixture = TestBed.createComponent(DeviceListComponent);
     component = fixture.componentInstance;
-    service = injector.get(DeviceService);
-    httpMock = injector.get(HttpTestingController);
     fixture.detectChanges();
-  });
-
-  afterEach(() => {
-    httpMock.verify();
+    service = TestBed.inject(DeviceService);
+    httpMock = TestBed.inject(HttpTestingController);
   });
 
   it('should create', () => {
@@ -173,8 +168,8 @@ describe('DeviceListComponent', () => {
       expect(device).toEqual(dummyDeviceList);
     });
 
-    const req = httpMock.expectOne(`${Constants.API_LINK}`);
-    expect(req.request.method).toBe('GET');
+    const req = httpMock.expectOne({ method: 'GET', url: Constants.API_LINK });
+    expect(req.request.responseType).toBe('json');
     req.flush(dummyDeviceList);
   });
 });

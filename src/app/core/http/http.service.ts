@@ -14,6 +14,6 @@ export class HttpService {
    * @returns http response
    */
   get(): Observable<any> {
-    return this.http.get(`${Constants.API_LINK}`);
+    return this.http.get(Constants.API_LINK);
   }
 }
